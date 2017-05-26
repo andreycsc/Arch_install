@@ -346,7 +346,7 @@ arch_chroot "amixer sset Master unmute"
 echo "---------------------------------------"
 echo -e "\033[32mInstaling Xorg server...\e[0m"
 echo "---------------------------------------"
-arch_chroot "pacman -S --noconfirm xorg-xinit"
+arch_chroot "pacman -S --noconfirm xorg-server xorg-xinit"
 
 echo "---------------------------------------"
 echo -e "\033[32mInstaling desktop env...\e[0m"
