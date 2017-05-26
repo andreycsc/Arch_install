@@ -58,7 +58,7 @@ install_video_cards(){
 if [[ ${VIDEO_DRIVER} == virtualbox ]]; then
 	arch_chroot "pacman -S --noconfirm virtualbox-guest-modules-arch virtualbox-guest-utils mesa-libgl"
 	#add_module "vboxguest vboxsf vboxvideo" "virtualbox-guest"
-	arch_chroot "usermod -a -G vboxsf $username"
+	arch_chroot "usermod -a -G vboxsf $USER_NAME"
 	arch_chroot "systemctl disable ntpd"
 	arch_chroot "systemctl enable vboxservice"
 	if [[ `uname -m` == x86_64 ]]; then
