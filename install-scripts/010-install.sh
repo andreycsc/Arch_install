@@ -58,7 +58,7 @@ install_video_cards(){
 if [[ ${VIDEO_DRIVER} == virtualbox ]]; then
 	arch_chroot "pacman -S --noconfirm virtualbox-guest-modules-arch virtualbox-guest-utils mesa-libgl"
 	#add_module "vboxguest vboxsf vboxvideo" "virtualbox-guest"
-	arch_chroot "usermod -aG vboxsf $username"
+	arch_chroot "usermod -a -G vboxsf $username"
 	arch_chroot "systemctl disable ntpd"
 	arch_chroot "systemctl enable vboxservice"
 	if [[ `uname -m` == x86_64 ]]; then
@@ -346,8 +346,7 @@ arch_chroot "amixer sset Master unmute"
 echo "---------------------------------------"
 echo -e "\033[32mInstaling Xorg server...\e[0m"
 echo "---------------------------------------"
-arch_chroot "pacman -S --noconfirm xorg-server"
-arch_chroot "pacman -S --noconfirm xorg-server-utils xorg-xinit"
+arch_chroot "pacman -S --noconfirm xorg-xinit"
 
 echo "---------------------------------------"
 echo -e "\033[32mInstaling desktop env...\e[0m"
