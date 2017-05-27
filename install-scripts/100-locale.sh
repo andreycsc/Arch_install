@@ -14,7 +14,7 @@ echo LC_IDENTIFICATION=ro_RO.UTF-8 >> /mnt/etc/locale.conf
 echo LC_MONETARY=ro_RO.UTF-8 >> /mnt/etc/locale.conf
 echo LC_ADDRESS=ro_RO.UTF-8 >> /mnt/etc/locale.conf
 
-arch-chroot /mnt export LANG=en_US.UTF-8
+arch-chroot /mnt 'export LANG=en_US.UTF-8'
 arch-chroot /mnt locale-gen
 
 echo "AndreiC" > /mnt/etc/hostname

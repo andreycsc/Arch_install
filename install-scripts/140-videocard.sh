@@ -3,12 +3,10 @@
 USER_NAME="andrey"
 
 
-
-local VIDEO_DRIVER
 # Determine video chipset - only Intel, ATI and nvidia are supported by this script
 echo -e "\033[32mDetecting video chipset...\e[0m"
-local _vga=`lspci | grep VGA | tr "[:upper:]" "[:lower:]"`
-local _vga_length=`lspci | grep VGA | wc -l`
+ _vga=`lspci | grep VGA | tr "[:upper:]" "[:lower:]"`
+ _vga_length=`lspci | grep VGA | wc -l`
 
 if [[ -n $(echo ${_vga} | grep virtualbox) ]]; then
 echo -e "\033[32mFound virtual box...\e[0m"
