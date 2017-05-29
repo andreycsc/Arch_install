@@ -1,7 +1,5 @@
 #!/bin/bash
 
-USER_NAME="andrey"
-
 arch-chroot /mnt touch /home/$USER_NAME/.xinitrc
 echo "exec startxfce4" > /mnt/home/$USER_NAME/.xinitrc
 

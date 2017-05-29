@@ -1,10 +1,5 @@
 #!/bin/bash
 
-USER_NAME="andrey"
-USER_PASSWORD="user"
-ROOT_PASSWORD="root"
-
-
 arch-chroot /mnt chpasswd <<<"root:$ROOT_PASSWORD"
 
 

@@ -16,6 +16,11 @@ git clone https://github.com/andreycsc/Arch_install.git
 # run each installation script in sequence, logging the results
 mkdir logs
 cd Arch_install/install-scripts
+
+export USER_NAME="andrey"
+export USER_PASSWORD="user"
+export ROOT_PASSWORD="root"
+
 for i in *.sh
 do
   echo $i

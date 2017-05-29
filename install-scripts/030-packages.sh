@@ -1,7 +1,5 @@
 #!/bin/bash
 
-export LANG=en_US.UTF-8
-
 url="https://www.archlinux.org/mirrorlist/?country=RO&use_mirror_status=on"
 tmpfile=$(mktemp --suffix=-mirrorlist)
 curl -so ${tmpfile} ${url}
@@ -27,4 +25,4 @@ chmod +r /etc/pacman.d/mirrorlist
 
 pacman -Syy
 
-pacstrap /mnt base base-devel dialog iw intel-ucode dosfstools exfat-utils 	ntfs-3g networkmanager ntp htop
+pacstrap /mnt base base-devel dialog iw intel-ucode dosfstools exfat-utils 	ntfs-3g ntp htop

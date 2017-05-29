@@ -1,7 +1,5 @@
 #!/bin/bash
 
-USER_NAME="andrey"
-
 #--yaourt
 arch-chroot /mnt pacman -S --noconfirm yaourt
 touch /mnt/home/$USER_NAME/.yaourtrc

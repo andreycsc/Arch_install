@@ -1,7 +1,5 @@
 #!/bin/bash
 
-USER_NAME="andrey"
-
 
 # Determine video chipset - only Intel, ATI and nvidia are supported by this script
 echo -e "\033[32mDetecting video chipset...\e[0m"

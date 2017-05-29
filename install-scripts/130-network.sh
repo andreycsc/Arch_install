@@ -5,4 +5,5 @@ wget http://someonewhocares.org/hosts/ipv6/hosts
 mv hosts /mnt/etc/hosts
 
 #network manager service
+arch-chroot /mnt pacman -S --noconfirm  networkmanager
 arch-chroot /mnt systemctl enable NetworkManager
