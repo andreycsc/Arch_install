@@ -2,28 +2,22 @@
 
 
 # Determine video chipset - only Intel, ATI and nvidia are supported by this script
-echo -e "\033[32mDetecting video chipset...\e[0m"
+
  _vga=`lspci | grep VGA | tr "[:upper:]" "[:lower:]"`
  _vga_length=`lspci | grep VGA | wc -l`
 
 if [[ -n $(echo ${_vga} | grep virtualbox) ]]; then
-echo -e "\033[32mFound virtual box...\e[0m"
 	VIDEO_DRIVER="virtualbox"
 elif [[ $_vga_length -eq 2 ]] && [[ -n $(echo ${_vga} | grep "nvidia") || -f /sys/kernel/debug/dri/0/vbios.rom ]]; then
-	echo -e "\033[32mFound  bumblebee...\e[0m"
 	VIDEO_DRIVER="bumblebee"
 elif [[ -n $(echo ${_vga} | grep "nvidia") || -f /sys/kernel/debug/dri/0/vbios.rom ]]; then
-	echo -e "\033[32mFound  nvidia...\e[0m"
 	VIDEO_DRIVER="nvidia"
 	#VIDEO_DRIVER="nouveau"
 elif [[ -n $(echo ${_vga} | grep "advanced micro devices") || -f /sys/kernel/debug/dri/0/radeon_pm_info || -f /sys/kernel/debug/dri/0/radeon_sa_info ]]; then
-	echo -e "\033[32mFound  ati...\e[0m"
 	VIDEO_DRIVER="ati"
 elif [[ -n $(echo ${_vga} | grep "intel corporation") || -f /sys/kernel/debug/dri/0/i915_capabilities ]]; then
-	echo -e "\033[32mFound intel...\e[0m"
 	VIDEO_DRIVER="intel"
 else
-	echo -e "\033[32mFound vesa...\e[0m"
 	VIDEO_DRIVER="vesa"
 fi
 
