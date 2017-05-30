@@ -11,7 +11,7 @@ echo "title		Arch Linux" > $ARCHCONF
 echo "linux		/vmlinuz-linux" >> $ARCHCONF
 echo "initrd	/intel-ucode.img" >> $ARCHCONF
 echo "initrd	/initramfs-linux.img" >> $ARCHCONF
-echo "options	root=/dev/disk/by-partlabel/ROOT rw quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log-priority=3 vga=current" >> $ARCHCONF
+echo "options	root=/dev/disk/by-label/ROOT rw quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log-priority=3 vga=current" >> $ARCHCONF
 
 echo "default	arch" > $LOADER
 echo "timeout	$BOOT_TIMEOUT" >> $LOADER
