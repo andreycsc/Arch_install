@@ -35,7 +35,7 @@ if [[ ${VIDEO_DRIVER} == virtualbox ]]; then
 #NVIDIA {{{
 elif [[ ${VIDEO_DRIVER} == nvidia ]]; then
 	arch-chroot /mnt pacman -S --noconfirm nvidia nvidia-libgl nvidia-settings
-	arch-chroot /mnt nvidia-xconfig --add-argb-glx-visuals --allow-glx-with-composite --composite -no-logo --render-accel -o /etc/X11/xorg.conf.d/20-nvidia.conf
+	arch-chroot /mnt nvidia-xconfig --add-argb-glx-visuals --allow-glx-with-composite --composite --force-full-composition-pipeline=FORCE-FULL-COMPOSITION-PIPELINE -o /etc/X11/xorg.conf.d/20-nvidia.conf
 	if [[ `uname -m` == x86_64 ]]; then
 		arch-chroot /mnt pacman -S --noconfirm lib32-nvidia-utils lib32-nvidia-libgl
 	fi
