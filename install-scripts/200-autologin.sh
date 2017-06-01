@@ -16,3 +16,6 @@ echo "if [ -z "\$DISPLAY" ] && [ -n "\$XDG_VTNR" ] && [ "\$XDG_VTNR" -eq 1 ]; th
 echo "startx" >> /mnt/home/$USER_NAME/.bashrc
 echo "fi" >> /mnt/home/$USER_NAME/.bashrc
 
+tocuh  /mnt/home/$USER_NAME/.gtkrc-2.0
+echo "gtk-enable-mnemonics = 0" >> /mnt/home/$USER_NAME/.gtkrc-2.0
+
