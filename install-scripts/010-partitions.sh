@@ -23,7 +23,7 @@ fi
 
 if [[ -e /dev/disk/by-partlabel/BOOT ]]; then
 	# format boot
-	mkfs.vfat -F32 /dev/disk/by-partlabel/BOOT
+	#mkfs.vfat -F32 /dev/disk/by-partlabel/BOOT
 	# mount boot
 	mkdir -p /mnt/boot
 	mount /dev/disk/by-partlabel/BOOT /mnt/boot

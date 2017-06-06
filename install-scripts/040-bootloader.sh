@@ -4,6 +4,14 @@ BOOT_TIMEOUT="0"
 ARCHCONF="/mnt/boot/loader/entries/arch.conf"
 LOADER="/mnt/boot/loader/loader.conf"
 
+# delete old boot config files if present
+if [[ -n $ARCHCONF ]]; then
+	rm $ARCHCONF
+fi
+if [[ -n $LOADER ]]; then
+	rm $LOADER
+fi
+
 arch-chroot /mnt bootctl --path=/boot install
 
 touch $ARCHCONF
